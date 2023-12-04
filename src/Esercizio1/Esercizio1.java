@@ -1,6 +1,5 @@
 package Esercizio1;
 
-import com.sun.tools.javac.Main;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,12 +8,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Esercizio1 {
-    private static final Logger logger = LoggerFactory.getLogger(Main.class);
+    private static final Logger logger = LoggerFactory.getLogger(Esercizio1.class);
 
     public static void main(String[] args) {
         int[] array = randomArray(5);
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         int value;
 
@@ -22,11 +21,11 @@ public class Esercizio1 {
             stampaArray(array);
 
             System.out.println("Inserisci un numero (0 per uscire): ");
-            value = scanner.nextInt();
+            value = Integer.parseInt(input.nextLine());
 
             if (value != 0) {
                 System.out.println("Inserisci la posizione (0 - " + (array.length - 1) + "): ");
-                int position = scanner.nextInt();
+                int position = Integer.parseInt(input.nextLine());
 
                 try {
                     aggiornaArray(array, position, value);
